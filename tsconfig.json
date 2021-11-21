@@ -5,7 +5,7 @@
       "@components/*": ["components/*"],
       "@api/*": ["pages/api/*"],
       "@pages/*": ["pages/*"],
-      "@app/*": ["Redux/app/*"],
+      "@redux-state/*": ["Redux/*"],
       "@prismaInstance/*": ["prisma/lib/*"],
     },
     "target": "es5",
