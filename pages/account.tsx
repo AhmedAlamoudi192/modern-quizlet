@@ -34,7 +34,6 @@ export default function account({data}: Props): ReactElement {
         <Link href={"study-set"} ><button className="text-lg text-white font-bold px-2 rounded bg-footer hover:bg-primary transition-colors  ">create set</button></Link>
       </h1>      
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 w-full ">
-        <StudyCard name={"COE444"} slugId={"3"} />
         {data.map((item, index) => (
           <StudyCard key={index} name={item.name} slugId={item.id} />
         ))}
