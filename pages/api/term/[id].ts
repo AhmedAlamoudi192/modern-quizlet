@@ -6,9 +6,8 @@ import prisma from '@helperInstances/prisma'
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
   const studysetId = req.query.id
 
-  if (req.method === 'GET') {
-    handleGET(studysetId, res)
-} else if (req.method === 'POST') {
+
+  if (req.method === 'POST') {
     handlePOST(req,res)
   } else if (req.method === 'DELETE') {
     handleDELETE(req, res)
@@ -17,15 +16,6 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
       `The HTTP ${req.method} method is not supported at this route.`
     )
   }
-}
-
-// GET /api/term/:id(studyset's)
-async function handleGET(studysetId, res) {
-  const studyset = await prisma.term.findMany({
-    where: { studySetId: Number(studysetId) },
-    
-  })
-  res.json(studyset)
 }
 
 // POST /api/term/:id(studyset's)

@@ -8,9 +8,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
   const token = req.cookies
   const {data, error} = await supabase.auth.api.getUserByCookie(token)
 
-  if (req.method === 'GET') {
-    handleGET(req, res)
-  } else if (req.method === 'DELETE') {
+if (req.method === 'DELETE') {
     handleDELETE(req, res)
   } else {
     throw new Error(
@@ -19,14 +17,6 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
   }
 }
 
-// GET /api/study-set/:id
-async function handleGET(studysetId, res) {
-  const studyset = await prisma.studySet.findUnique({
-    where: { id: Number(studysetId) },
-    
-  })
-  res.json(studyset)
-}
 
 
 // DELETE /api/studyset/:id

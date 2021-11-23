@@ -6,8 +6,6 @@ import prisma from '@helperInstances/prisma'
 export default async function handle(req: NextApiRequest, res: NextApiResponse) {
 if (req.method === 'POST') {
     handlePOST(req,res)
-  } else if (req.method === 'DELETE') {
-    handleDELETE(req, res)
   } else {
     throw new Error(
       `The HTTP ${req.method} method is not supported at this route.`
@@ -32,12 +30,4 @@ if (req.method === 'POST') {
         });
         res.json(JSON.stringify(terms))
       }
-    
-    // DELETE /api/term/
-    async function handleDELETE(studysetId, res) {
-      const studyset = await prisma.studySet.delete({
-        where: { id: Number(studysetId) },
-      })
-      res.json(studyset)
-    }
 }
