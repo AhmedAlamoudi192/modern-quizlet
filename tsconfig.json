@@ -6,7 +6,7 @@
       "@api/*": ["pages/api/*"],
       "@pages/*": ["pages/*"],
       "@redux-state/*": ["Redux/*"],
-      "@prismaInstance/*": ["prisma/lib/*"],
+      "@helperInstances/*": ["prisma/lib/*"],
     },
     "target": "es5",
     "lib": [
@@ -31,7 +31,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_app.tsx", "tailwind.config.js"  ],
+, "pages/_app.tsx", "tailwind.config.js", "pages/api/study-set/[id]/edit"  ],
   "exclude": [
     "node_modules"
   ]

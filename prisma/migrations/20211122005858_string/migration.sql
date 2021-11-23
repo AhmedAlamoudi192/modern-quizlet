@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "StudySet" ALTER COLUMN "userId" SET DATA TYPE TEXT;

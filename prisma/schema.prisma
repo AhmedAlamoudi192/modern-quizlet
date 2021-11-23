@@ -10,8 +10,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+model StudySet {
+  id     Int    @id @default(autoincrement())
+  userId String
+  name String 
+  description String?
+  terms  Term[]
+}
+
+model Term {
+  id         Int       @id @default(autoincrement())
+  name       String
+  definition String
+  StudySet   StudySet   @relation(fields: [studySetId], references: [id], onDelete: Cascade)
+  studySetId Int
 }
