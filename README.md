@@ -6,4 +6,4 @@ technology used are the following:
 * Supabase
 * Prisma
 * it is deployed on Vercel Check it out ? 
-* here:modern-quizlet.vercel.app
+* here: https://modern-quizlet.vercel.app
